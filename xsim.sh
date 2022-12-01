@@ -1,7 +1,7 @@
 function xsim() {
 
     # dependency
-    if [[ -z $(command -v fzf) ]]; then
+    if ! [[ -x "$(command -v fzf)" ]]; then
         brew install fzf
     fi
 
