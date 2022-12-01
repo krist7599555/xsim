@@ -64,7 +64,7 @@ function xsim() {
             device=$(xsim ls | grep -i "$2" | head -1)
             echo "$device"
         else
-            device=$(xsim ls | fzf)
+            device=$(xsim ls | fzf --reverse --border --color=bw)
             echo "$device"
         fi
 
