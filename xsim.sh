@@ -1,4 +1,11 @@
 function xsim() {
+
+    # dependency
+    if [[ -z $(command -v fzf) ]]; then
+        brew install fzf
+    fi
+
+    # help + doc
     if [[ "$@" =~ "--help" ]] || [[ $# -eq 0 ]]; then
         local __doc__="
         Xcode simulator helper
@@ -21,6 +28,7 @@ function xsim() {
         return
     fi
 
+    # command
     if [[ "$1" == "open" ]]; then
         open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
         return
